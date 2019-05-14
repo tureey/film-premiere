@@ -1,0 +1,85 @@
+.header {
+  position: relative;
+  padding: 30px;
+  min-height: 80vh;
+  box-sizing: border-box;
+}
+
+.header__logo {
+  margin: 0;
+  text-align: left;
+}
+
+.header__content {
+  max-width: 400px;
+  text-align: left;
+  margin: 75px 0;
+}
+
+.header__slogan {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1d1d1d;
+}
+
+.header__actions > button {
+  background: transparent;
+  margin-right: 10px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  border: 2px solid deepskyblue;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.header__actions > button:first-of-type {
+  border: 2px solid #e7f9ff;
+  color: deepskyblue;
+  background: #e7f9ff
+}
+.header__actions > button:last-of-type {
+  background: deepskyblue;
+  color: white;
+}
+
+
+@media screen and (min-width: 768px) {
+  .header{
+    min-height: 50vh;
+    background: url('https://images6.alphacoders.com/389/389726.jpg');
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+  .header__image-wrapper {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 50px;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .header__content {
+    margin: 125px 0;
+    max-width: 500px;
+  }
+
+  .header__title {
+    font-size: 3rem;
+  }
+
+  .header__slogan {
+    font-size: 1.75rem;
+  }
+
+  .header__actions > button {
+    font-size: 20px;
+    padding: 15px 25px;
+  }
+}

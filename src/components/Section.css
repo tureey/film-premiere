@@ -1,0 +1,11 @@
+.section {
+  padding: 30px;
+}
+
+.section.section--colored {
+  background: #e7f9ff;
+}
+
+.section__title {
+  text-align: left;
+}

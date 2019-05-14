@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Fragment} from 'react';
 import './App.css';
+import {Header} from './components/Header'
+import {BuyTickets} from './components/BuyTickets'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header
+        title='Avengers: Endgame'
+        slogan='A text which makes you want to buy a ticket and press the button'
+        actions={(
+          <Fragment>
+            <button>Information</button>
+            <button>Buy tickets</button>
+          </Fragment>
+        )}
+      />
+
+      <BuyTickets/>
     </div>
   );
 }

@@ -1,0 +1,18 @@
+.cinema {
+  width: 400px;
+  height: 300px;
+  padding: 30px 0;
+}
+.cinema__screen {
+  height: 5px;
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  background: blue;
+}
+
+.cinema__seats {
+  display: grid;
+  height: 100%;
+  margin-top: 20px;
+}

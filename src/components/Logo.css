@@ -1,0 +1,10 @@
+.logo {
+  text-decoration: none;
+  padding: 15px 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+.logo__icon {
+  margin-right: 10px;
+}

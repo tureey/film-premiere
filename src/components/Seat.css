@@ -20,6 +20,12 @@
   color: white;
 }
 
+.seat.seat--selected {
+  background: #f3ca4a;
+  border: 2px solid #8c720e;
+  color: #6b5500;
+}
+
 .seat.seat--owned {
   background: #22ca77;
   border: 2px solid #004e27;
@@ -30,12 +36,6 @@
   background: #00445a;
   border: 2px solid #00445a;
   color: white;
-}
-
-.seat.seat--selected {
-  background: #f3ca4a;
-  border: 2px solid #8c720e;
-  color: #6b5500;
 }
 
 .seat:focus {

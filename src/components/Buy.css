@@ -1,0 +1,78 @@
+.buy__wrapper {
+  --flex-direction: column;
+  --justify-content: center;
+
+  display: flex;
+  flex-direction: var(--flex-direction);
+  justify-content: var(--justify-content);
+}
+
+.buy__complementary {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+.buy__information {
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.buy__summary {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.buy__num-tickets {
+  font-size: 1.25rem;
+}
+.buy__total {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.buy__confirmation {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 999px;
+  margin-top: 10px;
+  background: deepskyblue;
+  color: white;
+  cursor: pointer;
+
+  transition: background-color 0.35s ease;
+}
+.buy__confirmation:hover {
+  background: #00a0d6;
+}
+
+@media screen and (min-width: 550px) {
+  .buy__wrapper {
+    --flex-direction: row;
+  } 
+
+  .buy__complementary {
+    margin-left: 50px;
+  }
+
+  .buy__summary {
+    max-width: 250px;
+    text-align: left;
+  }
+  
+  .buy__num-tickets {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .buy__total {
+    font-size: 3rem;
+  }
+}

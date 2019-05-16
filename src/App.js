@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import './App.css';
 import {Header} from './components/Header'
-import {BuyTickets} from './components/BuyTickets'
+import {Buy} from './components/Buy'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         )}
       />
 
-      <BuyTickets/>
+      <Buy/>
     </div>
   );
 }

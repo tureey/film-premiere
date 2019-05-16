@@ -5,7 +5,7 @@ import './Seat.css'
 export function Seat({
   status = 'available',
   onClick,
-  children
+  number
 }) {
   const componentClass = 'seat'
   const styles = [componentClass, `${componentClass}--${status}`].join(' ')
@@ -14,8 +14,13 @@ export function Seat({
     <span
       className={styles}
       tabIndex={tabIndex(status)}
-      onClick={onClick}>
-      {children}
+      onClick={onClick}
+      role="checkbox"
+      aria-checked={isChecked(status)}
+      aria-label={`Seat number ${number}`}
+      
+      >
+      {number}
     </span>
   )
 }
@@ -25,12 +30,15 @@ Seat.propType = {
     'available', 'selected', 'owned','reserved'
   ]).isRequired,
   selected: PropType.bool.isRequired,
-
-  children: PropType.node.isRequired
+  number: PropType.number.isRequired
 }
 
 function tabIndex(status) {
   return status === 'available' || status === 'selected'
     ? '0'
     : '-1'
+}
+
+function isChecked(status) {
+  return status === 'selected'
 }

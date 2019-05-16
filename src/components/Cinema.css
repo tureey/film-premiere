@@ -1,15 +1,13 @@
 .cinema {
-  width: 400px;
   display: grid;
-  grid-template-rows: 50px;
+  grid-template-rows: 50px 40px;
 }
 
 .cinema__screen {
   display: block;
-  margin-bottom: 20px;
   height: 5px;
   width: 250px;
-  margin: 0 auto;
+  margin: auto;
   background: #00445a;
 }
 
@@ -20,5 +18,10 @@
   justify-content: space-between;
   grid-column-gap: 5px;
   grid-row-gap: 15px;
-  padding: 0 30px;
+}
+
+@media screen and (min-width: 500px) {
+  .cinema {
+    width: 300px;
+  }
 }

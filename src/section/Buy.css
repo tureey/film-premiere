@@ -46,7 +46,7 @@
   background: deepskyblue;
   color: white;
   cursor: pointer;
-
+  
   transition: background-color 0.35s ease;
 }
 .buy__confirmation:hover {
@@ -63,16 +63,18 @@
   }
 
   .buy__summary {
-    max-width: 250px;
     text-align: left;
   }
   
   .buy__num-tickets {
     font-size: 1.5rem;
-    font-weight: bold;
   }
 
   .buy__total {
     font-size: 3rem;
+  }
+
+  .buy__confirmation {
+    max-width: 250px;
   }
 }

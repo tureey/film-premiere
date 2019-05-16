@@ -1,0 +1,44 @@
+.seat {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.seat.seat--available {
+  background: white;
+  border: 2px solid #00445a;
+  color: #00445a;
+}
+.seat.seat--available:hover {
+  background: #00445a;
+  color: white;
+}
+
+.seat.seat--owned {
+  background: #22ca77;
+  border: 2px solid #004e27;
+  color: #004e27;
+}
+
+.seat.seat--reserved {
+  background: #00445a;
+  border: 2px solid #00445a;
+  color: white;
+}
+
+.seat.seat--selected {
+  background: #f3ca4a;
+  border: 2px solid #8c720e;
+  color: #6b5500;
+}
+
+.seat:focus {
+  border-style: dashed;
+  outline: none;
+}

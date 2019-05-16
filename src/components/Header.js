@@ -6,9 +6,7 @@ import './Header.css'
 export function Header({title, slogan, actions}) {
   return(
     <header className="header">
-      <figure className="header__logo">
-        <Logo/>
-      </figure>
+      <Logo/>
 
       <div className="header__content">
         <h1 className="header__title">{title}</h1>
@@ -26,5 +24,4 @@ Header.propTypes = {
   title: PropTypes.string.isRequired,
   slogan: PropTypes.string.isRequired,
   actions: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired,
 }

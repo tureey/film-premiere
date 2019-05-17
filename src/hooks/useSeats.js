@@ -1,22 +1,19 @@
 import React from 'react'
+import {random} from '../utils/random'
 
-let defaultSeats = []
-defaultSeats.length = 70
-const defaultPrice = 9.99
-defaultSeats.fill({status: 'available', price: defaultPrice})
-defaultSeats.map((seat, index) => {
-  if (Math.floor((Math.random() * 10) + 1) > 5) {
-    return {...seat, status: 'reserved'}
-  } 
-
-  return seat
-})
-
-export function useSeats(initialState = defaultSeats) {
+export function useSeats() {
   const [inventoryId] = React.useState('movie-premiere__movie[0]')
   /*
     We collect the previous buys done whenever by the user
   */
+
+  let defaultPrice = 9.99
+  let initialState = []
+  for (let i =0; i < 70; i++) {
+    random() > 7
+      ? initialState.push({ price: defaultPrice, status: 'reserved'})
+      : initialState.push({ price: defaultPrice, status: 'available'})
+  }
   const [seats, setSeats] = React.useState(initialState)
   React.useEffect(() => {
     const seats = JSON.parse(localStorage.getItem(inventoryId))

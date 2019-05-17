@@ -6,7 +6,7 @@
 .cinema__screen {
   display: block;
   height: 5px;
-  width: 250px;
+  width: 80%;
   margin: auto;
   background: #00445a;
 }

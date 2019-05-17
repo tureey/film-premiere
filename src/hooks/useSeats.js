@@ -1,24 +1,28 @@
 import React from 'react'
 
-let defaultValue = []
-defaultValue.length = 70
+let defaultSeats = []
+defaultSeats.length = 70
 const defaultPrice = 9.99
-defaultValue.fill({status: 'available', price: defaultPrice})
+defaultSeats.fill({status: 'available', price: defaultPrice})
+defaultSeats.map((seat, index) => {
+  if (Math.floor((Math.random() * 10) + 1) > 5) {
+    return {...seat, status: 'reserved'}
+  } 
 
-export function useSeats(initialState = defaultValue) {
+  return seat
+})
 
+export function useSeats(initialState = defaultSeats) {
+  const [inventoryId] = React.useState('movie-premiere__movie[0]')
   /*
     We collect the previous buys done whenever by the user
   */
   const [seats, setSeats] = React.useState(initialState)
   React.useEffect(() => {
-    const seats = readInventory()
+    const seats = JSON.parse(localStorage.getItem(inventoryId))
     seats && setSeats(seats)   
-  }, [])
+  }, [inventoryId])
 
-  function readInventory() {
-    return JSON.parse(localStorage.getItem('seats'))
-  }
 
   /*
     Logic to select/unselect a seat
@@ -44,22 +48,28 @@ export function useSeats(initialState = defaultValue) {
     return seatsSelected.reduce((sum, seat) => sum + seat.price, 0)
   }
 
-  function purchaseSeats(callback) {
+  function purchaseSeats() {
     const seatsAfterPurchase = seats.map(seat => {
       if (seat.status !== 'selected') { return seat }
       return {...seat, status: 'owned'}
     })
 
+    console.log(seatsAfterPurchase)
+
     setSeats(seatsAfterPurchase)
-    callback()
+    updateInventory(seatsAfterPurchase)
   }
 
-  function updateInventory() {
-    localStorage.setItem('seats', JSON.stringify(seats))
+  function updateInventory(seats) {
+    localStorage.setItem(inventoryId, JSON.stringify(seats))
   }
 
   function round(number) {
     return Math.round(number * 100) / 100
+  }
+
+  function getSelected() {
+    return seats.filter(bySelected)
   }
 
   return {
@@ -67,8 +77,7 @@ export function useSeats(initialState = defaultValue) {
     setSeats,
     toggleSeat,
     purchaseSeats,
-    readInventory,
-    updateInventory,
+    getSelected,
     total: round(calculatePrice(seats.filter(bySelected)))
   }
 }

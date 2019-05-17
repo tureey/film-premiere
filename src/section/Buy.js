@@ -7,16 +7,13 @@ import {useSeats} from '../hooks/useSeats'
 import {useCurrency} from '../hooks/useCurrency'
 
 export function Buy() {
-  const {seats, toggleSeat, purchaseSeats, updateInventory, total} = useSeats()
+  const {seats, getSelected, toggleSeat, purchaseSeats, total} = useSeats()
   const currency = useCurrency()
 
   function onSubmitForm(e) {
     e.preventDefault();
-    purchaseSeats(updateInventory)
+    purchaseSeats()
   }
-
-  const seatsSelected = seats.filter(seat => seat.status === 'selected')
-  const countSeatsSelected = seatsSelected.length
 
   return(
     <Section id='buy' title='Buy tickets'>
@@ -25,7 +22,7 @@ export function Buy() {
         <BuySummary
           currency={currency}
           total={total}
-          seatsSelected={countSeatsSelected}/>
+          countSelected={getSelected().length}/>
       </form>
     </Section>
   )

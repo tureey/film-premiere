@@ -11,7 +11,7 @@ function App() {
         slogan='A text which makes you want to buy a ticket and press the button'
         actions={(
           <Fragment>
-            <a href="#" className="cta">Information</a>
+            <a href="#buy" className="cta">Get information</a>
             <a href="#buy" className="cta">Buy tickets</a>
           </Fragment>
         )}

@@ -1,11 +1,13 @@
 .container {
   margin: 0 auto;
 }
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 800px;
   }
 }
+
 @media screen and (min-width: 992px) {
   container {
     max-width: 1024px;

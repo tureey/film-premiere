@@ -18,7 +18,7 @@
   color: #1d1d1d;
 }
 
-.header__actions > button {
+.header__actions > .cta {
   background: transparent;
   margin-right: 10px;
   padding: 10px 15px;
@@ -27,14 +27,15 @@
   font-weight: 500;
   cursor: pointer;
   letter-spacing: 0.5px;
+  text-decoration: none;
 }
 
-.header__actions > button:first-of-type {
+.header__actions > .cta:first-of-type {
   border: 2px solid #e7f9ff;
   color: deepskyblue;
   background: #e7f9ff
 }
-.header__actions > button:last-of-type {
+.header__actions > .cta:last-of-type {
   background: deepskyblue;
   color: white;
 }
@@ -73,7 +74,7 @@
     font-size: 1.75rem;
   }
 
-  .header__actions > button {
+  .header__actions > .cta {
     font-size: 20px;
     padding: 15px 25px;
   }

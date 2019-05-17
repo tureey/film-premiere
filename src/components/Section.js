@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Section.css'
 
-export function Section({title, colored, children}) {
+export function Section({id, title, colored, children}) {
   return (
-    <section className={`section ${colored ? 'section--colored' : ''}`}>
+    <section id={id} className={`section ${colored ? 'section--colored' : ''}`}>
       <h1 className="section__title">{title}</h1>
       <div className="section__content">{children}</div>
     </section>

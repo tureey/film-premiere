@@ -19,6 +19,11 @@ export class Buy extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const seats = JSON.parse(sessionStorage.getItem('seats'))
+    seats && this.setState({seats})
+  }
+
   handleOnSeatClick = (seat, index) => {
     if (seat === 'reserved' || seat === 'owned') {
       return;
@@ -36,6 +41,11 @@ export class Buy extends React.Component {
 
   onSubmitForm = e => {
     e.preventDefault();
+
+    const seats = this.state.seats.map(seat => seat === 'selected' ? 'owned' : seat)
+    this.setState({seats}, () => {
+      sessionStorage.setItem('seats', JSON.stringify(seats))  
+    })
   }
 
   render() {
@@ -45,10 +55,10 @@ export class Buy extends React.Component {
     const totalPrice = countSeatsSelected * this.state.seatPrice
 
     return(
-      <Section title='Buy tickets'>
+      <Section id='buy' title='Buy tickets'>
         <form onSubmit={this.onSubmitForm} className="buy__wrapper">
           <Cinema seats={seats} handleOnSeatClick={this.handleOnSeatClick}/>
-          <BuySummary price={totalPrice} seatsSelected={countSeatsSelected}/>
+          <BuySummary total={totalPrice} seatsSelected={countSeatsSelected}/>
         </form>
       </Section>
     )

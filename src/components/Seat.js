@@ -18,7 +18,6 @@ export function Seat({
       role="checkbox"
       aria-checked={isChecked(status)}
       aria-label={`Seat number ${number}`}
-      
       >
       {number}
     </span>

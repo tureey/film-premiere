@@ -1,0 +1,68 @@
+.buy-summary {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+.buy-summary__text {
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.buy-summary__payment {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.buy-summary__num-tickets {
+  font-size: 1.25rem;
+}
+
+.buy-summary__total {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.buy-summary__confirmation {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 999px;
+  margin-top: 10px;
+  background: deepskyblue;
+  color: white;
+  cursor: pointer;
+  
+  transition: background-color 0.35s ease;
+}
+.buy-summary__confirmation:hover {
+  background: deepskyblue;
+}
+
+@media screen and (min-width: 550px) {
+  .buy-summary {
+    margin-left: 50px;
+  }
+
+  .buy-summary__payment {
+    text-align: left;
+  }
+  
+  .buy-summary__num-tickets {
+    font-size: 1.5rem;
+  }
+
+  .buy-summary__total {
+    font-size: 3rem;
+  }
+
+  .buy-summary__confirmation {
+    max-width: 250px;
+  }
+}
